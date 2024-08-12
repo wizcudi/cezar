@@ -1,6 +1,6 @@
 
 :root {
-    --black: #0b0c0c;
+    --black: #000000;
     /* --gold: #FFD700; */
     --gold: #DAA520;
     /* --goldenrod: #DAA520; */
@@ -44,21 +44,12 @@ header {
 .navbar-toggler:focus {
     box-shadow: none !important;
 }
-/* .navbar-collapse .navbar-nav {
-    display: inline-block;
-} */
 .navbar-collapse {
     text-align: center;
     font-size: 18px;
     /* text-transform: uppercase; */
     font-weight: 500;
 }
-
-
-
-
-
-
 .nav-socials-number {
     display: flex;
     justify-content: space-between;
@@ -92,11 +83,11 @@ header {
     justify-content: space-between;
 }
 
-.nav-quote-btn-div {
+/* .nav-quote-btn-div {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-}
+} */
 .nav-quote-btn {
     font-weight: 600;
     font-size: 15px;
@@ -117,7 +108,11 @@ header {
         column-gap: 30px;
     }
 }
+
+
+
 @media (min-width: 576px) {
+
     .nav-socials-number {
         padding: 20px 50px;
     }
@@ -142,6 +137,12 @@ header {
     }
 }
 
+@media (max-width: 576px) {
+    .nav-quote-btn {
+        display: none;
+    }
+}
+
 
 
 .main {
@@ -153,15 +154,6 @@ header {
     margin-bottom: 80px;
     /* border: solid blue; */
 }
-.hero-div {
-    display: flex;
-    flex-direction: column;
-    max-width: 820px;
-    text-align: center;
-    row-gap: 10px;
-    padding-bottom: 50px;
-    /* border: solid red; */
-}
 .hero-div h1 {
     text-transform: capitalize;
     font-size: 65px;
@@ -171,13 +163,18 @@ header {
     font-size: 35px;
 }
 .hero-btn-div button {
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 10px;
     text-transform: uppercase;
     color: var(--black);
     border: 2px solid var(--black);
     background-color: var(--gold);
 }
+
+
+
+
 
 
 
@@ -200,7 +197,7 @@ header {
     flex-direction: column;
 }
 .about-bio h2 {
-    font-size: 55px;
+    font-size: 60px;
 }
 .about-bio p {
     font-size: 20px;
@@ -208,8 +205,14 @@ header {
 .about-bio h2,
 .about-bio p{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start; 
+    /* border: solid black 2px; */
 }
+
+
+
+
+
 
 
 .services-outer {
@@ -232,12 +235,11 @@ header {
 }
 .our-services-h2 {
     text-transform: uppercase;
-    /* color: var(--gold); */
     font-size: 60px;
 }
 .our-services-p {
     text-transform: capitalize;
-    font-size: 30px;
+    font-size: 35px;
 }
 .services-area-div {
     display: flex;
@@ -247,7 +249,6 @@ header {
 .services-area {
     display: flex;
     row-gap: 25px;
-    /* column-gap: 25px; */
     justify-content: space-between;
     width: 100%;
     /* border: dashed black 2px; */
@@ -256,18 +257,20 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* padding-top: 20px;
-    padding-bottom: 20px; */
-    padding: 20px;
+    padding: 30px 20px;
+    row-gap: 10px;
     border: solid 2px var(--gold);
 }
 .services-h2 {
     text-transform: capitalize;
-    font-size: 40px;
+    font-size: 50px;
 }
 .services-p {
     font-size: 20px;
 }
+
+
+
 
 
 
@@ -299,8 +302,9 @@ header {
     /* border: solid red 2px; */
 }
 .our-process p {
-    font-size: 30px;
-    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 .process-area {
     justify-content: space-evenly;
@@ -313,7 +317,7 @@ header {
     row-gap: 20px;
     justify-content: space-between;
     color: var(--black); 
-    padding: 30px;
+    padding: 45px;
     border-radius: 12px; 
     box-shadow: 0 4px 8px rgba(218, 165, 32, 0.4);
 }
@@ -333,9 +337,14 @@ header {
 }
 
 
+
+
+
 .accordion-outer {
-    padding: 30px 0;
-    /* background-color: whitesmoke; */
+    padding: 90px 0;
+    background-color: var(--gold);
+    border-top: solid 2px var(--black);
+    border-bottom: solid 2px var(--black);
 }
 .accordion-section {
     display: flex;
@@ -345,29 +354,30 @@ header {
 .accordion {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 45px;
     width: 100%;
     max-width: 830px;
 }
 .accordion-item {
-    border: none; /* Removes the border */
-    overflow: hidden; /* Ensures content doesn't overflow rounded corners */
+    border: none; 
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4)
 }
-
 .accordion-button { 
     color: var(--gold);
     font-weight: 600;
     font-size: 30px;
+    column-gap: 20px;
 }
 .accordion-collapse {
     background-color: var(--black);
     color: var(--gold);
 }
-
 .accordion-button:focus {
     box-shadow: none; 
     outline: none;
     background-color: var(--gold);
+    border: solid 2px var(--black);
     color: var(--black);
 }
 .accordion-button:not(.collapsed) {
@@ -392,85 +402,86 @@ header {
 .contact-form {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 15px;
     width: 100%;
     max-width: 600px;
     /* border: solid 2px blue; */
 }
 .contact-form-h2-div {
-    display: flex;
-    justify-content: flex-start;
     margin-bottom: 20px;
-    /* border: solid black; */
 }
 .contact-form-h2 {
     color: var(--gold);
-    font-size: 55px;
+    font-size: 65px;
     margin: 0;
 }
 .mb-3 {
     display: flex;
     flex-direction: column;
-    row-gap: 0px;
-    /* border: solid red 2px; */
+    row-gap: 5px;
+}
+.form-label, 
+.form-btn {
+    font-size: 22px;
 }
 .form-label {
-    /* color: var(--gold); */
-    font-size: 20px;
     font-weight: 600;
     margin: 0;
-    /* border: solid black 2px; */
 }
-/* .form-btn-div {
-    border: solid black 2px;
-} */
 .form-btn {
     font-weight: 600;
-    font-size: 15px;
     text-transform: uppercase;
     color: var(--black);
     border: 2px solid var(--black);
     background-color: var(--gold);
-    width: 200px;
+    width: 70%;
 }
+
+
+
+
+
+
+
+
 .contact-svgs {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
-    row-gap: 60px;
-    /* border: solid red 2px; */
-}
-.contact-svg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 5px;
+    margin-top: 40px;
+    row-gap: 90px;
     /* border: solid red 2px; */
 }
 .my-svg-footer-phone,
 .my-svg-footer-email {
-    height: 25px;
+    height: 50px;
 }
+.svg-footer-phone,
 .svg-footer-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     letter-spacing: .75px;
-    /* text-transform: uppercase; */
+    font-size: 20px;
+    width: 100%;
+    /* border: solid red 2px; */
 }
 .contact-svg-alt {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 50px;
     /* border: solid blue 2px; */
 }
 .my-svg-footer-socials-ig {
-    height: 34px;
+    height: 68px;
     cursor: pointer;
     fill: var(--instagram);
     
 }
 .my-svg-footer-socials-fb{
-    height: 30px;
+    height: 60px;
     cursor: pointer;
     fill: var(--facebook);
 }
@@ -478,28 +489,45 @@ header {
 
 
 
+
+
+
+
+
 .footer-section {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 60px;
     letter-spacing: .75px;
     text-transform: uppercase;
     background-color: var(--black);
-    color: var(--light);
-    padding: 40px 0;
+    color: var(--gold);
+    font-size: 35px;
+    padding: 100px 0;
     /* border: solid 2px black; */
 }
 .footer-section p{
     margin: 0;
     /* border: solid 2px blue; */
 }
-
 .footer-section-logo-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
-    row-gap: 5px;
+    /* padding: 15px; */
+    row-gap: 15px;
+    /* border: solid 2px green; */
+}
+.footer-logo {
+    border: 2px solid var(--gold);
+    height: 180px;
+    border-radius: 100px;
+    margin-bottom: 50px;
+}
+.footer-section-logo-div div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     /* border: solid 2px green; */
 }
 .footer-section-num-email {
@@ -510,30 +538,30 @@ header {
     padding: 15px;
     /* border: solid 2px red; */
 }
-
 .footer-contact-info {
     /* letter-spacing: 1px;
     text-transform: uppercase; */
-    color: var(--light);
+    color: var(--gold);
+    font-size: 20px;
 }
-
 .my-svg-footer-atl-div {
     display: flex;
     justify-content: center;
-    column-gap: 25px;
+    column-gap: 55px;
     padding: 20px 0;
     fill: var(--light);
     /* border: solid 2px blue; */
 }
 .my-svg-footer-alt-ig {
-    height: 50px;
+    fill: var(--gold);
+    height: 90px;
     cursor: pointer;
 }
 .my-svg-footer-alt-fb {
-    height: 45px;
+    fill: var(--gold);
+    height: 85px;
     cursor: pointer; 
 }
-
 .footer-section-btn-div {
     display: flex;
     padding: 20px;
@@ -542,400 +570,357 @@ header {
 }
 .footer-section-btn {
     font-weight: 600;
-    font-size: 15px;
+    font-size: 30px;
     text-transform: uppercase;
-    color: var(--light);
-    border: 2px solid var(--light);
+    color: var(--gold);
+    border: 2px solid var(--gold);
     background-color: var(--black);
 }
 
 
 
 
-
-
 @media (max-width: 992px) {
+    
     .hero-div h1 {
         font-size: 55px;
     }
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 50px;
-    }
-    .process-card h3 {
-        font-size: 45px;
-    }
-    .form-label {
-        font-size: 20px;
-    }
-    /* .about-bio p,
-    .our-services-p,
-    .services-p,
-    .our-process p,
-    .process-card p {
-        font-size: 18px;
-    } */
-    .process-card-svg {
-        height: 40px;
+    .hero-p-div p {
+        font-size: 40px;
     }
 
+    
 
+
+    .our-services-p {
+        font-size: 30px;
+    }
 }
 @media (max-width: 768px) {
+    .hero-div {
+        width: 100%;
+    }
+    
     .hero-div h1 {
-        font-size: 43px;
+        font-size: 40px;
     }
     .hero-p-div p {
-        font-size: 26px;
+        font-size: 30px;
+    }
+    .hero-btn-div button {
+        margin-top: 0;
+        font-size: 17px;
     }
     .about-div {
         flex-direction: column;
         row-gap: 20px;
+        max-width: 570px;
     }
-
     .about-img {
         padding-top: 0;
     }
-
-    .about-div {
-        max-width: 570px;
+    .our-process p {
+        font-size: 30px;
     }
-
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 43px;
-    }
-    .process-card h3 {
-        font-size: 40px;
-    }
-    .about-bio p,
-    .our-services-p,
-    .services-p,
-    .our-process p,
-    .process-card p {
-        font-size: 21px;
-    }
-    .process-card-svg {
-        height: 37px;
-    }
-
     .contact-section{
         flex-direction: column;
         row-gap: 50px;
     }
-
-    
-
+}
+@media (min-width: 537px) {
+    .hero-div {
+        display: flex;
+        flex-direction: column;
+        max-width: 820px;
+        text-align: center;
+        row-gap: 20px;
+        padding-bottom: 30px;
+        /* border: solid red; */
+    }
 }
 @media (max-width: 537px) {
     .hero-div h1 {
-        font-size: 37px;
+        font-size: 38px;
+        margin-bottom: 10px;
     }
     .hero-p-div p {
-        font-size: 22px;
+        margin-bottom: 25px;
     }
-
-    
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 40px;
+    .hero-btn-div button {
+        margin-bottom: 40px;
     }
-    .process-card h3 {
-        font-size: 37px;
+    .services-area div {
+        padding: 20px 15px;
     }
-    .accordion-button { 
-        font-size: 25px;
+    .our-services-p {
+        font-size: 27px;
     }
-    .about-bio p,
-    .our-services-p,
-    .services-p,
-    .our-process p,
-    .process-card p,
-    .accordion-body p {
-        font-size: 19px;
+    .process-card {
+        padding: 30px;
     }
-    .process-card-svg {
-        height: 37px;
+}
+@media (max-width: 500px) {
+    .hero-p-div p {
+        font-size: 30px;
     }
- 
+    .hero-btn-div button {
+        font-size: 17px;
+    }
+}
+@media (max-width: 476px) {
+    .hero-div h1 {
+        font-size: 36px;
+    }
+    .hero-p-div p {
+        font-size: 29px;
+    }
+    .hero-btn-div button {
+        font-size: 17px;
+    }
 }
 @media (max-width: 466px) {
+    
+    .our-services-h2 {
+        font-size: 55px;
+    }
+    .our-services-p {
+        font-size: 25px;
+    }
+    .our-process h2,
+    .process-card h3 {
+        font-size: 55px;
+    }
+    .our-process p {
+        font-size: 28px;
+    }
+}
+@media (max-width: 454px) {
+    .hero-div h1 {
+        font-size: 35px;
+    }
+    .hero-p-div p {
+        font-size: 27px;
+    }
+    .hero-btn-div button {
+        font-size: 17px;
+    }
+}
+@media (max-width: 442px) {
     .hero-div h1 {
         font-size: 32px;
     }
     .hero-p-div p {
-        font-size: 19px;
+        font-size: 24px;
     }
-
-    .about-img img {
-        height: 160px;
-    }
-
-
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 35px;
-    }
-    .process-card h3 {
-        font-size: 32px;
-    }
-    .about-bio p,
-    .our-services-p,
-    .services-p,
-    .our-process p,
-    .process-card p {
-        font-size: 18px;
-    }
-    .process-card-svg {
-        height: 32px;
-    }
-
-
-
-}
-@media (max-width: 455px) {
-    .accordion-button { 
-        font-size: 20px;
+    .hero-btn-div button {
+        font-size: 15px;
     }
 }
 @media (max-width: 407px) {
     .hero-div h1 {
-        font-size: 28px;
-    }
-    .hero-btn-div button {
-        font-size: 20px;
-    }
-
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
         font-size: 30px;
     }
-    .process-card h3 {
-        font-size: 27px;
+    .hero-p-div p {
+        font-size: 22px;
     }
-    .process-card-svg {
-        height: 27px;
-    }
-
-    .my-svg-footer-alt-ig,
-    .my-svg-footer-socials-ig {
-        height: 30px;
-    }
-    .my-svg-footer-alt-fb,
-    .my-svg-footer-socials-fb{
-        height: 26px;
-    }
-    .my-svg-footer-phone,
-    .my-svg-footer-email {
-        height: 21px;
-    }
-    .form-btn {
+    .hero-btn-div button {
         font-size: 15px;
     }
 
-
-}
-
-@media (max-width: 400px) {
-    .footer-section p {
-        font-size: 17px;
+    .our-services-h2 {
+        font-size: 50px;
     }
+    .our-services-p {
+        font-size: 20px;
+    }
+    .services-p {
+        font-size: 18px;
+    }
+    .our-process p {
+        font-size: 25px;
+    }
+}
+@media (max-width: 400px) {
     .footer-section-num-email div{
         flex-direction: column;
     }
 }
-
-@media (max-width: 388px) {
-    .hero-p-div p {
-        font-size: 17.5px;
+@media (max-width: 390px) {
+    .about-bio h2 {
+        font-size: 55px;
+    }
+    .our-process h2,
+    .process-card h3 {
+        font-size: 50px;
+    }
+    .our-process p {
+        font-size: 22px;
+    }
+    .process-card {
+        padding: 25px;
+    }
+    .process-card p {
+        font-size: 20px;
     }
 }
-@media (max-width: 380px) {
-    .accordion-button { 
-        font-size: 16px;
+@media (max-width: 382px) {
+    .hero-div h1 {
+        font-size: 28px;
+    }
+    .hero-p-div p {
+        font-size: 20px;
+    }
+    .hero-btn-div button {
+        font-size: 14px;
     }
 }
 @media (max-width: 360px) {
     .hero-div h1 {
+        font-size: 26px;
+    }
+    .hero-p-div p {
+        font-size: 20px;
+    }
+    .hero-btn-div button {
+        font-size: 13px;
+    }
+
+    .our-services-h2 {
+        font-size: 45px;
+    }
+    .services-h2 {
+        font-size: 40px;
+    }
+    .services-p {
+        font-size: 16px;
+    }
+    .our-process h2,
+    .process-card h3 {
+        font-size: 45px;
+    }
+    .our-process p {
+        font-size: 20px;
+    }
+    .process-card p {
+        font-size: 18px;
+    }
+    .contact-form-h2 {
+        font-size: 59px;
+    }
+    .accordion-button { 
+        font-size: 25px;
+    }
+    .my-svg-footer-atl-div {
+        column-gap: 50px;
+    }
+    .footer-section-btn {
+        font-size: 25px;
+    }
+}
+@media (max-width: 349px) {
+    .about-bio h2 {
+        font-size: 50px;
+    }
+    .about-img img {
+        height: 160px;
+    }
+    .about-bio p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 336px) {
+    .hero-div h1 {
         font-size: 25px;
     }
     .hero-p-div p {
-        font-size: 16px;
-    }
-    .about-img img {
-        height: 130px;
-    }
-
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 27px;
-    }
-    .process-card h3,
-    .accordion-button {
-        font-size: 24px;
-    }
-    .process-card-svg {
-        height: 24px;
-    }
-
-
-    .my-svg-footer-alt-ig,
-    .my-svg-footer-socials-ig {
-        height: 27px;
-    }
-    .my-svg-footer-alt-fb,
-    .my-svg-footer-socials-fb{
-        height: 23px;
-    }
-
-    .my-svg-footer-phone,
-    .my-svg-footer-email {
-        height: 20px;
-    }
-
-    
-}
-@media (max-width: 333px) {
-    .hero-p-div p {
-        font-size: 15px;
+        font-size: 20px;
     }
 }
 @media (max-width: 324px) {
     .hero-div h1 {
-        font-size: 23px;
+        font-size: 24px;
     }
     .hero-p-div p {
-        font-size: 14.5px;
+        font-size: 18px;
     }
-
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 25px;
+    .hero-btn-div button {
+        font-size: 12px;
     }
-    .process-card h3,
-    .accordion-button {
-        font-size: 23px;
+    .our-services-h2 {
+        font-size: 42px;
     }
-    .process-card-svg {
-        height: 23px;
+    .our-services-p {
+        font-size: 18px;
     }
-
-    .my-svg-footer-alt-ig,
-    .my-svg-footer-socials-ig {
-        height: 25px;
+    .svg-footer-phone,
+    .svg-footer-email,
+    .footer-contact-info {
+        font-size: 17px;
     }
-    .my-svg-footer-alt-fb,
-    .my-svg-footer-socials-fb{
-        height: 21px;
-    }
-
-    .my-svg-footer-phone,
-    .my-svg-footer-email {
-        height: 20px;
-    }
-    
 }
-@media (max-width: 304px) {
-    .hero-div h1 {
-        font-size: 21px;
-    }   
-    .hero-p-div p {
-        font-size: 13px;
+@media (max-width: 318px) {
+
+
+    .about-bio h2 {
+        font-size: 45px;
     }
-
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
     .our-process h2,
-    .contact-form-h2 {
-        font-size: 23px;
+    .process-card h3 {
+        font-size: 40px;
     }
-    .process-card h3,
-    .accordion-button {
-        font-size: 21px;
-    }
-    .process-card-svg {
-        height: 21px;
-    }
-
-    .my-svg-footer-alt-ig,
-    .my-svg-footer-socials-ig {
-        height: 23px;
-    }
-    .my-svg-footer-alt-fb,
-    .my-svg-footer-socials-fb{
-        height: 19px;
-    }
-
-    .my-svg-footer-phone,
-    .my-svg-footer-email {
-        height: 19px;
-    }
-
-
-}
-@media (max-width: 277px) {
-    .hero-div h1 {
-        font-size: 19px;
-    }
-
-    .about-bio h2,
-    .our-services-h2,
-    .services-h2,
-    .our-process h2,
-    .contact-form-h2 {
-        font-size: 22px;
-    }
-    .process-card h3,
-    .accordion-button {
+    .our-process p {
         font-size: 20px;
     }
-    .process-card-svg {
-        height: 20px;
+    .accordion-button { 
+        font-size: 20px;
+        column-gap: 10px;
+    }
+}
+@media (max-width: 312px) {
+    .hero-div h1 {
+        font-size: 23px;
+    }
+    .hero-p-div p {
+        font-size: 17px;
+    }
+    .hero-btn-div button {
+        font-size: 12px;
     }
 
-    .my-svg-footer-alt-ig,
-    .my-svg-footer-socials-ig {
-        height: 22px;
+}
+@media (max-width: 304px) {
+    .our-services-h2 {
+        font-size: 38px;
     }
-    .my-svg-footer-alt-fb,
-    .my-svg-footer-socials-fb{
-        height: 18px;
+    .services-h2 {
+        font-size: 36px;
+    }
+    .our-services-p {
+        font-size: 17px;
+    }
+}
+@media (max-width: 300px) {
+    .hero-div h1 {
+        font-size: 21px;
+    }
+    .hero-p-div p {
+        font-size: 17px;
+    }
+    .hero-btn-div button {
+        font-size: 10px;
     }
 
-
-    .my-svg-footer-phone,
-    .my-svg-footer-email {
-        height: 17px;
+}
+@media (max-width: 286px) {
+    .about-bio h2 {
+        font-size: 40px;
     }
-
+}
+@media (max-width: 256px) {
+    .about-bio h2 {
+        font-size: 37px;
+    }
+    .about-img img {
+        height: 140px;
+    }
 }
